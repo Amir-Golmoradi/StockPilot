@@ -1,0 +1,36 @@
+@StockMarket_HostAddress = http://localhost:5187/api/stock
+
+### Get All Stocks
+GET {{StockMarket_HostAddress}}
+Accept: application/json
+
+### Get Stock By ID
+GET {{StockMarket_HostAddress}}/1053
+Accept: application/json
+
+### Post New Stock
+POST {{StockMarket_HostAddress}}
+Content-Type: application/json
+
+{
+  "symbol": "TESLA",
+  "companyName": "Tesla",
+  "industry": "Electric Car",
+  "marketCap": 876132906542,
+  "purchase": 75.29,
+  "lastDiv": 7.05
+}
+
+### Update Existing Stocks
+PUT {{StockMarket_HostAddress}}/1053
+Content-Type: application/json
+
+{
+  "symbol": "AMZN",
+  "companyName": "Amazon",
+  "industry": "Technology & Ecommerce"
+}
+
+### Delete Stock By Id
+DELETE {{StockMarket_HostAddress}}/1054
+Accept: application/json
