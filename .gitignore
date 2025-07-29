@@ -1,0 +1,51 @@
+# .gitignore for ASP.NET Core + Entity Framework + VS Code + JetBrains Rider
+# Build and publish folders
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider/IntelliJ project files
+.idea/
+*.idea/
+
+# VS Code settings (optional, keep if you want to share)
+.vscode/
+
+# Entity Framework generated files
+Migrations/*Designer.cs
+Migrations/*Snapshot.cs
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# NuGet packages
+*.nupkg
+# Package restore files
+project.lock.json
+project.fragment.lock.json
+
+# Others
+*.vspscc
+*.vssscc
+
+# Uncomment below if you use docker
+# docker-compose.override.yml
+
+# Uncomment below if you use secrets
+# secrets.json
+
+# Uncomment below if you want to ignore local database
+# *.mdf
+# *.ldf
+
+# Ignore test results
+TestResults/
