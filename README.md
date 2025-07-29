@@ -144,7 +144,9 @@ This project welcomes thoughtful contributions. If you're passionate about clean
 
 **Amir Golmoradi**
 📍 Backend Engineer · System Design Enthusiast
+
 🔗 [LinkedIn](https://linkedin.com/in/amirgol)
+
 🧠 Focus: Scalable systems, backend craftsmanship, long-term value.
 
 ---
