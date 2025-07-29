@@ -1,8 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using StockMarket.Data;
+using StockMarket.Interface;
+using StockMarket.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddScoped<IStockRepository, StockRepository>();
 // Services
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
@@ -22,6 +24,6 @@ if (app.Environment.IsDevelopment())
 }
 
 // Middleware & Routing
-// app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 app.MapControllers();
 app.Run();
