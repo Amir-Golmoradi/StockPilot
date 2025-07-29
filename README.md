@@ -94,7 +94,7 @@ StockMarket/
 ### 1. Clone the Repo
 
 ```bash
-git clone https://github.com/your-username/stock-market-backend.git
+git clone https://github.com/Amir-Golmoradi/StockPilot
 cd stock-market-backend
 ```
 
@@ -144,7 +144,7 @@ This project welcomes thoughtful contributions. If you're passionate about clean
 
 **Amir Golmoradi**
 📍 Backend Engineer · System Design Enthusiast
-🔗 [LinkedIn](https://linkedin.com/in/YOUR-ID)
+🔗 [LinkedIn](https://linkedin.com/in/amirgol)
 🧠 Focus: Scalable systems, backend craftsmanship, long-term value.
 
 ---
