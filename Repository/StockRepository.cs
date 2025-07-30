@@ -27,15 +27,15 @@ public class StockRepository(AppDBContext appDbContext) : IStockRepository
 
     public async Task<Stock?> UpdateAsync(int id, UpdateStockRequestDto stockDto)
     {
-        var stockModel = await appDbContext.Stocks.FirstOrDefaultAsync(x => x.Id == id);
-        if (stockModel == null) return null;
-        stockModel.Symbol = stockDto.Symbol;
-        stockModel.CompanyName = stockDto.CompanyName;
-        stockModel.Industry = stockDto.Industry;
-        stockModel.Purchase = stockDto.Purchase;
-        stockModel.LastDiv = stockDto.LastDiv;
+        var existingStock = await appDbContext.Stocks.FirstOrDefaultAsync(x => x.Id == id);
+        if (existingStock == null) return null;
+        existingStock.Symbol = stockDto.Symbol;
+        existingStock.CompanyName = stockDto.CompanyName;
+        existingStock.Industry = stockDto.Industry;
+        existingStock.Purchase = stockDto.Purchase;
+        existingStock.LastDiv = stockDto.LastDiv;
         await appDbContext.SaveChangesAsync();
-        return stockModel;
+        return existingStock;
     }
 
     public async Task<Stock?> DeleteAsync(int id)
