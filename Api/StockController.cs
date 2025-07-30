@@ -45,18 +45,9 @@ public class StockController(AppDBContext appDbContext, IStockRepository stockRe
     [Route("{id:int}")]
     public async Task<IActionResult> Update([FromRoute] int id, [FromBody] UpdateStockRequestDto updateDto)
     {
-        // 1. Find Existing Stocks
-        var stockModel = await appDbContext.Stocks.FirstOrDefaultAsync(x => x.Id == id);
+        var stockModel = await stockRepo.UpdateAsync(id, updateDto);
         if (stockModel == null) return NotFound();
-        // 2. Update the Stocks that we want
-        stockModel.Symbol = updateDto.Symbol;
-        stockModel.CompanyName = updateDto.CompanyName;
-        stockModel.Industry = updateDto.Industry;
-        stockModel.Purchase = updateDto.Purchase;
-        stockModel.LastDiv = updateDto.LastDiv;
-        // 3. Save all the changes.
-        await appDbContext.SaveChangesAsync();
-        return Ok(stockModel.ToStockDto());
+        return Ok(stockModel);
     }
 
     [HttpDelete]
